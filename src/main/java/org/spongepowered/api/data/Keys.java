@@ -1758,7 +1758,7 @@ public final class Keys {
     /**
      * The maximum damage a {@link FallingBlock} can deal.
      */
-    public static final Supplier<Key<BoundedValue<Integer>>> MAX_FALL_DAMAGE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(Key.class, "MAX_FALL_DAMAGE");
+    public static final Supplier<Key<BoundedValue<Double>>> MAX_FALL_DAMAGE = Sponge.getRegistry().getCatalogRegistry().provideSupplier(Key.class, "MAX_FALL_DAMAGE");
 
     /**
      * The maximum health of a {@link Living}.
