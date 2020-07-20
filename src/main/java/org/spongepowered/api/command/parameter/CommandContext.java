@@ -42,6 +42,22 @@ import java.util.Optional;
 public interface CommandContext extends CommandCause {
 
     /**
+     * Gets if a flag with given key was specified at least once.
+     *
+     * @param flagKey The flag's key
+     * @return If the flag was specified
+     */
+    boolean hasFlag(String flagKey);
+
+    /**
+     * Returns how many times a given flag was invoked for this command.
+     *
+     * @param flagKey The flag's key
+     * @return The number of times the flag was specified
+     */
+    int getFlagInvocationCount(String flagKey);
+
+    /**
      * Returns whether this context has any value for the given argument key.
      *
      * @param key The key to look up
@@ -127,6 +143,13 @@ public interface CommandContext extends CommandCause {
      * A builder for creating this context.
      */
     interface Builder extends CommandContext {
+
+        /**
+         * Adds a flag invocation to the context.
+         *
+         * @param key The flag key
+         */
+        void addFlagInvocation(String key);
 
         /**
          * Adds a parsed object into the context, for use by commands.
